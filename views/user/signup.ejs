@@ -1,0 +1,53 @@
+<% if (message) { %>
+    <div class="alert alert-danger"><%= message %></div>
+  <% } %>
+	<div class="main-w3layouts wrapper">
+		<h1>Read_Write_Share SignUp Form</h1>
+		
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+				<form action="/user/signup" method="post">
+				
+					<input class="text email" type="email" name="email" placeholder="Email" required="">
+					<input class="text" type="password" name="password" placeholder="Password" required="">
+				
+					
+					<input type="submit" value="SIGNUP">
+				</form>
+				<p>Change to <a href="#" class="change-price">Signin</a> <br> <br><a href="/user/facebook"><i class="fab fa-facebook-f"></i> Facebook</a> 
+					&nbsp;&nbsp;<a href="/user/google"><i class="fab fa-google"></i> Google</a>
+				  </p>
+			</div>
+		</div>
+		
+		<ul class="colorlib-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+    <!-- //main -->
+    
+    
+<!--     
+    <div class="container col-md-4 col-md-offset-4">
+
+    
+      
+    <form action="/user/signup" method="post">
+        <h3>Signup</h3>
+        <label for="email">Email</label> <br> <input type="email" name="email">
+        <br>
+        <label for="password">Password</label> <br> <input type="password" name="password">
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+</div>    -->
