@@ -14,7 +14,7 @@ db.once("open", function(callback) {
    console.log("Mongo Connection Succeeded."); /* Once the database connection has succeeded, the code in db.once is executed. */
 });
  
-var signup_connect = mongoose.model("signup", signup1.signup); //This creates the Bug model..
+var signup_connect = mongoose.model("signup", signup1.signup); //This creates the Bug model.
 // var Bug1 = mongoose.model("Bug1", Bugs1.product1); 
 var profile_connect = mongoose.model("profile", profile1.profile); //This creates the Bug model.
  
