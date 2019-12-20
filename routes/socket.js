@@ -16,7 +16,7 @@ function socket(io) {
       io.emit('chat message', data);
     });
   });
-  /* GET home page. */
+  /* .GET home page. */
   router.get('/home',isLoggedIn, function(req, res, next) {
     res.render('chat/index', { name:req.user });
     // res.redirect('chat/index');

@@ -12,7 +12,8 @@ router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json())
 
 
-/* GET home page. */
+
+/* .GET home page. */
 router.get('/', function(req, res, next) {
   // if (req.user) {
   //   console.log('logged in homepage');

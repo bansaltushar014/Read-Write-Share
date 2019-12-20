@@ -9,7 +9,7 @@ const storageEngine = multer.diskStorage({
   }
 }); 
 
-//init
+//.init
 
 const upload =  multer({
   storage: storageEngine,
