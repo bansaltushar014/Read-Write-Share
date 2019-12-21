@@ -8,7 +8,7 @@ var passport = require('passport');
 // parse application/x-www-form-urlencoded
 router.use(bodyParser.urlencoded({ extended: false }));
  
-// parse application/json
+//. parse application/json
 router.use(bodyParser.json())
 
 

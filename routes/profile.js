@@ -9,7 +9,7 @@ var upload = require('./upload');
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
 
-/* GET home page. */
+/*. GET home page. */
 router.get('/',isLoggedIn, function (req, res, next) {
   Photos.profile_connect.find({id:req.session.passport.user},  function (err, photos) {
     if (err) throw err;

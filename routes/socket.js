@@ -4,7 +4,7 @@ var linkifyHtml = require('linkifyjs/html');
 var linkifyStr = require('linkifyjs/string');
 
 function socket(io) {
-  // start listen with socket.io
+  //. start listen with socket.io
   io.on('connection', function(socket){
     console.log('a user connected');
     socket.on('new message', function(msg){
