@@ -10,7 +10,6 @@ const storageEngine = multer.diskStorage({
 }); 
 
 //.init
-
 const upload =  multer({
   storage: storageEngine,
   limits: { fileSize:200000 },
@@ -18,7 +17,6 @@ const upload =  multer({
     validateFile(file, callback);
   }
 }).single('image');
-
 
 var validateFile = function(file, cb ){
   allowedFileTypes = /jpeg|jpg|png|gif/;
@@ -30,6 +28,5 @@ var validateFile = function(file, cb ){
     cb("Invalid file type. Only JPEG, PNG and GIF file are allowed.")
   }
 }
-
 
 module.exports = upload;

@@ -39,7 +39,6 @@ function(req, res) {
 });
 
 app.get('/logout', function(req, res){
-    
     req.logout();
     // below if else line to check user is logged in or not
     // if (req.user) {
