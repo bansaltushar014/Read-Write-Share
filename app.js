@@ -35,7 +35,7 @@ app.use(flash());
 app.use(function(req,res,next){
   res.locals.login = req.isAuthenticated();
   // console.log('print this '+req.isAuthenticated());
-  // this is test
+  // this is test in angular
   next();
 });
 
