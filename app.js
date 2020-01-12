@@ -33,10 +33,12 @@ app.use(flash());
 
 
 app.use(function(req,res,next){
-  res.locals.login=req.isAuthenticated();
+  res.locals.login = req.isAuthenticated();
   // console.log('print this '+req.isAuthenticated());
+  // this is test
   next();
 });
+
 app.use('/profile', profileRouter);
 app.use('/socket', socket.router);
 app.use('/user', userRouter);
@@ -58,5 +60,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 socket.sck(app.io);
+
 module.exports = app;
