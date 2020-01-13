@@ -1,8 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-var product_controller = require('./controllers/product.controller');
-var mail_controller = require('./controllers/mail.controller');
+var product_controller = require('../controllers/product.controller');
+var mail_controller = require('../controllers/mail.controller');
+
 
 router.post('/sendmail', mail_controller.send_mail);
 router.get('/testmail', mail_controller.test);

@@ -15,7 +15,7 @@ db.once("open", function(callback) {
 });
  
 var signup_connect = mongoose.model("signup", signup1.signup); //This creates the Bug model.
-//. var Bug1 = mongoose.model("Bug1", Bugs1.product1); 
+// var Bug1 = mongoose.model("Bug1", Bugs1.product1); 
 var profile_connect = mongoose.model("profile", profile1.profile); //This creates .the Bug model.
  
 module.exports.signup_connect = signup_connect; /* Export the Bug model so index.js can access it. */
