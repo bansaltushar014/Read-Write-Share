@@ -6,19 +6,19 @@ exports.send_mail = function (req, res) {
   var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'tuskibansal@gmail.com',
-      pass: 'tushar@gmail',
+      user: passkeys.email,
+      pass: passkeys.password,
     }
   });
 
-  name = req.body.name;
-  fromemail = req.body.email;
-  text = req.body.text;
+  //name = req.body.name;
+  //fromemail = req.body.email;
+  //text = req.body.text;
   const mailOptions = {
     from: 'tuskibansal@gmail.com', // sender address
     to: 'bansaltushar014@gmail.com', // list of receivers
-    subject: 'Hotel-Booking mail from' + fromemail, // Subject line
-    html: 'New mail from <b>' + name + '</b> and message is <br>' + text // plain text body
+    subject: 'Hotel-Booking mail from' , // Subject line
+    html: 'New mail from <b>' +  '</b> and message is <br>'  // plain text body
   };
 
   transporter.sendMail(mailOptions, function (err, info) {
@@ -34,6 +34,6 @@ exports.send_mail = function (req, res) {
 
 exports.test = function (req, res) {
   //res.send('name is '+req.body.name+ 'emai is '+ req.body.email);
-  console.log('working '+ passkeys.email);
-  res.send('Greetings from the Test controller!');
+  
+  res.send('Greetings from the mail controller!');
 };
