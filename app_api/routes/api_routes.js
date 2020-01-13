@@ -1,17 +1,17 @@
 var express = require('express');
 var router = express.Router();
 
-var product_controller = require('../controllers/product.controller');
-var mail_controller = require('../controllers/mail.controller');
+var product = require('../controllers/product');
+var mail = require('../controllers/mail');
 
 
-router.post('/sendmail', mail_controller.send_mail);
-router.get('/testmail', mail_controller.test);
-router.get('/test', product_controller.test);
-router.post('/create', product_controller.product_create);
-router.post('/createroom', product_controller.room_create);
-router.get('/getrooms' ,product_controller.room_get);
-router.get('/:id', product_controller.product_details);
-router.delete('/:id/delete', product_controller.product_delete);
+router.post('/sendmail', mail.send_mail);
+router.get('/testmail', mail.test);
+router.get('/test', product.test);
+router.post('/create', product.product_create);
+router.post('/createroom', product.room_create);
+router.get('/getrooms' ,product.room_get);
+router.get('/:id', product.product_details);
+router.delete('/:id/delete', product.product_delete);
 
 module.exports = router;
