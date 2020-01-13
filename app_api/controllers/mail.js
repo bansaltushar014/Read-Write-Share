@@ -33,7 +33,6 @@ exports.send_mail = function (req, res) {
 };
 
 exports.test = function (req, res) {
-  //res.send('name is '+req.body.name+ 'emai is '+ req.body.email);
-  
+  //res.send('name is '+req.body.name+ 'emai is '+ req.body.email);  
   res.send('Greetings from the mail controller!');
 };
