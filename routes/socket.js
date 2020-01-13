@@ -3,7 +3,6 @@ var router = express.Router();
 var linkifyHtml = require('linkifyjs/html');
 var linkifyStr = require('linkifyjs/string');
 
-
 function socket(io) {
   //. start listen with socket.io
   io.on('connection', function(socket){
@@ -23,8 +22,6 @@ function socket(io) {
     // res.redirect('chat/index');
   });
 }
-
-
 
 function isLoggedIn(req,res,next){  
  if(req.isAuthenticated()){

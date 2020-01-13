@@ -1,24 +1,20 @@
+  var passkeys = require('../../passkeys');
 
-var passkeys = require('../../passkeys');
 exports.send_mail = function (req, res) {
   var nodemailer = require('nodemailer');
-  
   var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: passkeys.email,
-      pass: passkeys.password,
+      user: 'tuskibansal@gmail.com',
+      pass: 'tushar@gmail',
     }
   });
 
-  //name = req.body.name;
-  //fromemail = req.body.email;
-  //text = req.body.text;
-  const mailOptions = {
+  var mailOptions = {
     from: 'tuskibansal@gmail.com', // sender address
     to: 'bansaltushar014@gmail.com', // list of receivers
-    subject: 'Hotel-Booking mail from' , // Subject line
-    html: 'New mail from <b>' +  '</b> and message is <br>'  // plain text body
+    subject: 'Hotel-Booking mail from', // Subject line
+    html: 'New mail from <b> </b> and message is <br>'  // plain text body
   };
 
   transporter.sendMail(mailOptions, function (err, info) {
@@ -29,10 +25,8 @@ exports.send_mail = function (req, res) {
       console.log(info);
   });
   res.send('sent');
-  //res.send('name is '+req.body.name+ 'emai is '+ req.body.email);
 };
 
 exports.test = function (req, res) {
-  //res.send('name is '+req.body.name+ 'emai is '+ req.body.email);  
-  res.send('Greetings from the mail controller!');
+  res.send('Yes, Mail is working perfectly!');
 };

@@ -13,7 +13,7 @@ var session = require('express-session');
 var socket = require('./routes/socket');
 var flash = require('req-flash');
 var validator = require('express-validator');
-
+var cors = require("cors");
 var app = express();
 app.io = require('socket.io')();
 require('./config/passport');
@@ -21,6 +21,16 @@ require('./config/passport');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+
+app.use(cors({origin:"*"}));
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", '*');
+    res.header("Access-Control-Allow-Credentials", true);
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
+    next();
+});
 
 app.use(logger('dev'));
 app.use(express.json());
