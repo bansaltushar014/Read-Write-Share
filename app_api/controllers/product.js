@@ -1,6 +1,10 @@
+var passkeys = require('../../passkeys');
+
 // const Product = require('../models/product.model');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+
+
 
 let ProductSchema = new Schema({
     name: {type: String, required: true, max: 100},
@@ -20,7 +24,8 @@ const Room = mongoose.model('Room', RoomSchema);
 
 //Simple version, without validation or sanitation
 exports.test = function (req, res) {
-    res.send('Greetings from the Test controller!');
+    console.log(passkeys);
+    res.send('Greetings from the Test controllerl!');
 };
 
 exports.product_create = function (req, res,next) {

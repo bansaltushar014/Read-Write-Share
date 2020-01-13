@@ -1,5 +1,8 @@
+
+var passkeys = require('../../passkeys');
 exports.send_mail = function (req, res) {
   var nodemailer = require('nodemailer');
+  
   var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -31,5 +34,6 @@ exports.send_mail = function (req, res) {
 
 exports.test = function (req, res) {
   //res.send('name is '+req.body.name+ 'emai is '+ req.body.email);
+  console.log('working '+ passkeys.email);
   res.send('Greetings from the Test controller!');
 };
