@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser')
-const multer = require('multer');
+var multer = require('multer');
 var Photos = require("./connection");
 var passport = require('passport');
 var upload = require('./upload');
@@ -28,6 +28,7 @@ var storage = multer.diskStorage({
     cb(null, file.fieldname + '-' + Date.now())
   }
 });
+
 var upload = multer({ storage: storage });
 router.post('/index',upload.single('image'), function (req, res) {
     // if (error) {
@@ -36,11 +37,7 @@ router.post('/index',upload.single('image'), function (req, res) {
     // } else {
       if (req.file == undefined) {
         res.redirect('/?msg=2');
-      } else {
-
-        /**
-         * Create new record in mongoDB
-         */
+      } else {       
         var fullPath = "uploads/" + req.file.filename;
         var document = {
           id: req.session.passport.user,
@@ -57,9 +54,7 @@ router.post('/index',upload.single('image'), function (req, res) {
         });
       
     }
-  
 });
-
 
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
