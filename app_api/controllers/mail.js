@@ -1,12 +1,12 @@
-  var passkeys = require('../../passkeys');
+var passkeys = require('../../passkeys');
 
 exports.send_mail = function (req, res) {
   var nodemailer = require('nodemailer');
   var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'tuskibansal@gmail.com',
-      pass: 'tushar@gmail',
+      user: passkeys.email,
+      pass: passkeys.password,
     }
   });
 

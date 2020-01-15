@@ -43,7 +43,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(validator());
 app.use(flash());
 
-
 app.use(function (req, res, next) {
   res.locals.login = req.isAuthenticated();
   // console.log('print this '+req.isAuthenticated());

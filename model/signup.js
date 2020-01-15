@@ -25,5 +25,5 @@ signup.methods.validPassword = function(password){
     return bcrypt.compareSync(password, this.password);
 };
 
-module.exports.signup = signup; 
+module.exports = signup; 
 

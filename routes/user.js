@@ -2,7 +2,7 @@ var express = require('express');
 var app = express.Router();
 var bodyParser = require('body-parser')
 var passport = require('passport');
-var Models = require("./connection");
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 

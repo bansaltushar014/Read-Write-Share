@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser')
 var multer = require('multer');
-var Photos = require("./connection");
+var Photos = require("../model/connection");
 var passport = require('passport');
 var upload = require('./upload');
 
@@ -11,7 +11,7 @@ router.use(bodyParser.json());
 
 /*. GET home page. */
 router.get('/',isLoggedIn, function (req, res, next) {
-  Photos.profile_connect.find({id:req.session.passport.user},  function (err, photos) {
+  Photos.profile.find({id:req.session.passport.user},  function (err, photos) {
     if (err) throw err;
     // .console.log(photos);
     res.render('profile/index', {data:photos, name:req.user});
@@ -68,21 +68,3 @@ function isLoggedIn(req, res, next) {
 
 module.exports = router;
 
-// router.post('/index', isLoggedIn, function(req,res,next){
-//   upload(req, res,(error) => {
-//   var fullPath = "files/"+req.file.filename;
-
-//   var document = {
-//     id: req.session.passport.user,
-//     image:     fullPath, 
-//     content:   req.body.content
-//   };
-
-// var photo = new Photo(document); 
-// photo.save(function(error){
-//   if(error){ 
-//     throw error;
-//   } 
-//   res.send('/?success');
-// });
-// });

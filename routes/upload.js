@@ -1,8 +1,8 @@
-const multer = require('multer');
-const path   = require('path');
+var multer = require('multer');
+var path   = require('path');
 
 /**. Storage Engine */
-const storageEngine = multer.diskStorage({
+var storageEngine = multer.diskStorage({
   destination: './public/files',
   filename: function(req, file, fn){
     fn(null,  new Date().getTime().toString()+'-'+file.fieldname+path.extname(file.originalname));
@@ -10,7 +10,7 @@ const storageEngine = multer.diskStorage({
 }); 
 
 //init
-const upload =  multer({
+var upload =  multer({
   storage: storageEngine,
   limits: { fileSize:200000 },
   fileFilter: function(req, file, callback){
@@ -20,8 +20,8 @@ const upload =  multer({
 
 var validateFile = function(file, cb ){
   allowedFileTypes = /jpeg|jpg|png|gif/;
-  const extension = allowedFileTypes.test(path.extname(file.originalname).toLowerCase());
-  const mimeType  = allowedFileTypes.test(file.mimetype);
+  var extension = allowedFileTypes.test(path.extname(file.originalname).toLowerCase());
+  var mimeType  = allowedFileTypes.test(file.mimetype);
 
   if(extension && mimeType){
     return cb(null, true);

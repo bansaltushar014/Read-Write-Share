@@ -8,5 +8,5 @@ var profile = new Schema({
 });
 
 // module.exports = mongoose.model('product', Schema);
-module.exports.profile = profile; 
+module.exports = profile; 
 
