@@ -14,45 +14,39 @@
 
     <!--......,. Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
       <ul class="nav navbar-nav navbar-right">
         <li>
           <% if (login){%>
           <a href="/profile">Profile</a>
           <%}%>
-              </li>
-              <li>
-                <a href="#">
-                  <% if (name) { %>
-          <%= name.email %>
-          <%= name.google.emailid %>
-          <%= name.facebook.name %>
-          <% }else{ %>
-
-          user
-          <% } %>
-              </a>
+        </li>
+        <li>
+          <a href="#">
+            <% if (name) { %>
+            <%= name.email %>
+            <%= name.google.emailid %>
+            <%= name.facebook.name %>
+            <% } %>
+          </a>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-            aria-expanded="false">Dropdown <span class="caret"></span></a>
+            aria-expanded="false"> Signup <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <% if (login) { %>
-            <li><a href="/user/logout">logout</a></li>
+            <li><a href="/user/logout">Logout</a></li>
             <% }else{%>
 
-            <li><a href="/user/signup">Signup</a></li>
+            <li><a href="/user/signup">Local Signup</a></li>
             <!-- <li><a href="/user/signin">Signin</a></li> -->
-            <li><a href="/user/facebook"><i class="fab fa-facebook-f"></i> Facebook</a></li>
-            <li><a href="/user/google"><i class="fab fa-google"></i> Google</a></li>
-            <%}%>
-                  <!-- <li><a href="/user/logout">logout</a></li> -->
-                  
-                </ul>
-              </li>
+            <li><a href="/user/facebook"><i class="fab fa-facebook-f"></i> &nbspFacebook</a></li>
+            <li><a href="/user/google"><i class="fab fa-google"></i> &nbspGoogle</a></li>
+            <%}%>              
+          </ul>
+        </li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-   </div><!-- /.container-fluid -->
+    </div>
+  </div>
  </nav>
 
       
