@@ -8,6 +8,6 @@ var mail = require('../controllers/mail');
 router.post('/sendmail', mail.send_mail);
 router.get('/testmail', mail.test);
 router.get('/test', product.test);
-
+router.get('/signup', product.signup);
 
 module.exports = router;

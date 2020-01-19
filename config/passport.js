@@ -27,17 +27,16 @@ passport.use('local.signup', new LocalStrategy({
       email: email
     }, function (err, user) {
       if (err) {
-        console.log("tyui0");
         return done(err);
       }
 
       if (user) {
-        console.log("user already exist dude");
+        console.log("user already exist");
         // req.flash is not used to send the msg, proper way is using the message as parameter
         // then in failure where it is redirected, there catch it using the message req.flash()
         return done(null, false, { message: 'already exist email id' });
       }
-      console.log("creating the user");
+      console.log("Creating The User");
       var newuser = new Models.signup();
       newuser.email = email;
       newuser.password = newuser.encryptPassword(password);
@@ -65,18 +64,18 @@ passport.use('local.signin', new LocalStrategy({
         return done(err);
         }
         if (!user) {
-        console.log("user not exist dude");
+        console.log("User not exist");
         // req.flash is not used to send the msg, proper way is using the message as parameter
         // then in failure where it is redirected, there catch it using the message req.flash()
-        return done(null, false, { message: 'not exist email id' });
+        return done(null, false, { message: 'Not exist email id' });
         }
 
         // this commented line below is for the checking the password match, useful in case of signup
         // why we used validpassword still not clear
         if (!user.validPassword(password)) {
-        console.log("user password is " + user.password + "and password is " + password);
-        console.log("password not matched");
-        return done(null, false, { message: 'password not matched' });
+        console.log("User password is " + user.password + "and password is " + password);
+        console.log("Password not matched");
+        return done(null, false, { message: 'Password not matched' });
         }
         return done(null, user);
     });

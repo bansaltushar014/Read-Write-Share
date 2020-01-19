@@ -23,7 +23,7 @@ exports.send_mail = function (req, res) {
     }
     else
       console.log(info);
-  });
+    });
   res.send('sent');
 };
 
