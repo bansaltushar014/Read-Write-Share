@@ -6,7 +6,6 @@ var keys =  {
         "clientSecret" : 'H8VcVf4GMUJF1svn9h_JaRm5'
     },
      "facebook" : {
-       
         "clientID": "418767632000899",
         "clientSecret": "0ce2ff4ffb2fd3bcd983617d8a4cfafa",
     }

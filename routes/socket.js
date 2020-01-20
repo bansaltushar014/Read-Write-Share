@@ -20,13 +20,13 @@ function socket(io) {
 
   /* .GET home page. */
   router.get('/home',isLoggedIn, function(req, res, next) {
-    //res.render('chat/index', { name:req.user });
-    request.get("https://floating-stream-61460.herokuapp.com/api/signup", (err, response, body) => {
-        if (err) {
-            return next(err);
-        }
-        res.render('chat/index', {name:req.user, data: JSON.parse(body)});
-    });
+    res.render('chat/index', { name:req.user });
+    // request.get("https://floating-stream-61460.herokuapp.com/api/signup", (err, response, body) => {
+    //     if (err) {
+    //         return next(err);
+    //     }
+    //     res.render('chat/index', {name:req.user, data: JSON.parse(body)});
+    // });
   });
 }
 

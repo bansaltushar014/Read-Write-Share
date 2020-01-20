@@ -32,8 +32,6 @@ passport.use('local.signup', new LocalStrategy({
 
       if (user) {
         console.log("user already exist");
-        // req.flash is not used to send the msg, proper way is using the message as parameter
-        // then in failure where it is redirected, there catch it using the message req.flash()
         return done(null, false, { message: 'already exist email id' });
       }
       console.log("Creating The User");
@@ -68,17 +66,11 @@ passport.use('local.signin', new LocalStrategy({
         }
         if (!user) {
           console.log("User not exist");
-          // req.flash is not used to send the msg, proper way is using the message as parameter
-          // then in failure where it is redirected, there catch it using the message req.flash()
           return done(null, false, { message: 'Not exist email id' });
         }
 
-        // this commented line below is for the checking the password match, useful in case of signup
-        // why we used validpassword still not clear
         if (!user.validPassword(password)) {
-          console.log("User password is " + user.password + "and password is " + password);
-          console.log("Password not matched");
-          return done(null, false, { message: 'Password not matched' });
+            return done(null, false, { message: 'Password not matched' });
         }
         return done(null, user);
       });
@@ -118,8 +110,7 @@ passport.use('google.signin', new GoogleStrategy({
         if (err) {
           return done(err);
         } else {
-          // console.log('new user creaate +' + newuser);
-          return done(null, newuser);
+            return done(null, newuser);
         }
       });
     }
