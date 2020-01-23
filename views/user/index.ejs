@@ -1,55 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
- <!--Latest compiled ..and minified CSS -->
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
- <!--. jQuery library -->
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
- 
- <!--. Latest compiled.. JavaScript -->
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!--.. Custom Theme files -->
-<link href="/css/signup.css" rel="stylesheet" type="text/css" media="all" />
-<!--. //Custom Theme files -->
-<!-- web font -->
-<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
-<!-- //web font -->
+<head>
+    
+    <% include ../partials/head%>
+    <!-- web font -->
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
     <title>Read Write Share</title>
+    <link href="/css/signup.css" rel="stylesheet" type="text/css" media="all" />
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <!-- font awesome cdn -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  </head>
-  <body>
-      <% include ../partials/navbar%>  
-      
-    <br><br>
-    
-    
-    <br><br>
 
-    <div class="none-sq-price">
-      <% include signin%>
-    </div>
-    <div class="sq-price">
-        <% include signup%>
-    </div>
-    
-    <!-- <h1><a href="#" class="change-price">change price</a></h1> -->
-  
+</head>
+
+<body>
+  <% include ../partials/navbar%>
+
+  <br><br><br><br>
+
+  <div class="none-sq-price">
+    <% include signin%>
+  </div>
+  <div class="sq-price">
+    <% include signup%>
+  </div>
   <br>
-  <script
-			  src="https://code.jquery.com/jquery-2.2.4.min.js"
-			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-			  crossorigin="anonymous"></script>
-  <script>$('.none-sq-price').hide();
-    $('.change-price').on('click',
-      function() {
+  
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <script>
+    $('.none-sq-price').hide();
+    $('.change-price').on('click', function () {
         $('.sq-price, .none-sq-price').toggle(200);
       }
-    );</script>
-  </body>
+    );
+  </script>
+</body>
 </html>

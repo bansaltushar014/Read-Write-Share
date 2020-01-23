@@ -45,7 +45,7 @@ router.post('/index',upload.single('image'), function (req, res) {
           content: req.body.content
         };
 
-        var photo = new Photos.profile_connect(document);
+        var photo = new Photos.profile(document);
         photo.save(function (error) {
           if (error) {
             throw error;

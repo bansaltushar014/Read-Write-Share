@@ -1,52 +1,47 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/">Read Write Share</a>
-    </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Read Write Share</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    <!--......,. Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <% if (login){%>
-          <a href="/profile">Profile</a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <% if (login){%>
+          <a class="nav-link" href="/profile">Profile</a>
           <%}%>
-        </li>
-        <li>
-          <a href="#">
+       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
             <% if (name) { %>
             <%= name.email %>
             <%= name.google.emailid %>
             <%= name.facebook.name %>
             <% } %>
           </a>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-            aria-expanded="false"> Signup <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <% if (login) { %>
-            <li><a href="/user/logout">Logout</a></li>
+      </li> 
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Signup
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <!-- <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          
+          <a class="dropdown-item" href="#">Something else here</a> -->
+
+          <% if (login) { %>
+            <a class="dropdown-item" href="/user/logout">Logout</a>
             <% }else{%>
 
-            <li><a href="/user/signup">Local Signup</a></li>
-            <!-- <li><a href="/user/signin">Signin</a></li> -->
-            <li><a href="/user/facebook"><i class="fab fa-facebook-f"></i> &nbspFacebook</a></li>
-            <li><a href="/user/google"><i class="fab fa-google"></i> &nbspGoogle</a></li>
-            <%}%>              
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
- </nav>
+            <a class="dropdown-item" href="/user/signup">Local Signup</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/user/facebook"><i class="fab fa-facebook-f"></i> &nbspFacebook</a>
+            <a class="dropdown-item" href="/user/google"><i class="fab fa-google"></i> &nbspGoogle</a>
+            <%}%>    
 
-      
+        </div>
+      </li>
+    </ul>    
+  </div>
+</nav>

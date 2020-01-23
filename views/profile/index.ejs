@@ -1,27 +1,15 @@
 <!DOCTYPE html>
-<html ng-app="rewrsh">
+<html>
 
 <head>
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Page</title>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <script src="../../public/Angular/index.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
+    <% include ../partials/head%>
 </head>
 
 <body>
-
-    <a href="/" class="brand-logo left">Read Write Share</a>
-    <a class="right" href="/user/logout">Logout</a>
-
+    <% include ../partials/navbar%>
+   
     <h4 class="center-align">
-        <%= name.email %> 
-        <%= name.google.emailid %>
-        <%= name.facebook.name %> 
         <a href="/socket/home"><button> Chat </button></a>
     </h4>
     <br><br>
