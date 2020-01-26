@@ -4,6 +4,7 @@
 <head>
     <title>Profile Page</title>
     <% include ../partials/head%>
+    <link rel="stylesheet" href="/css/profile.css">
 </head>
 
 <body>
@@ -26,7 +27,7 @@
                         <input type="file" name="image" required="required" />
                     </div>
                     <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text" />
+                        
                     </div>
                 </div>
             </div>
@@ -50,14 +51,16 @@
     </form>
 
     <br><br>
-
     <% data.forEach(function(user){%>
-    <!-- <li><%= user.id %></li> -->
-    <div class="row card-panel hoverable">
-        <div class="col s6 center-align responsive-img"><img width="200" src='/<%= user.image %>' alt="image"> </div>
-        <div class="col s6 center-align"><%= user.content %></div>
+    <div class="mitgliederliste">
+    <figure class="einzel"><img class = "img-responsive" alt="Mitglieder" src='/<%= user.image %>' style="max-width: 500px; max-height: 425px;">
+        <figcaption><%= user.content %><br></figcaption>
+      </figure>
     </div>
     <%})%>
+    
+    
+    
 
 </body>
 </html>

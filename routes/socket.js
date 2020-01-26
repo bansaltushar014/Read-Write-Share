@@ -3,6 +3,7 @@ var router = express.Router();
 var linkifyHtml = require('linkifyjs/html');
 var linkifyStr = require('linkifyjs/string');
 var request = require('request');
+var Models = require("../model/connection");
 
 function socket(io) {
 
@@ -14,13 +15,30 @@ function socket(io) {
         nama: linkifyStr(msg.nama, options),
         message: linkifyStr(msg.message, options)
       }
-      io.emit('chat message', data);
+      var newmsg = new Models.chat();
+
+      newmsg.name = msg.nama;
+      newmsg.connectedChat.push({
+        connectedName : 'bite@gmail.com',
+        msg : msg.message
+      })
+      // newmsg.connectedChat.connectedName = 'bite@gmail.com';
+      
+      // newmsg.connectedChat.msg = msg.message;
+      // //newmsg.connectedChat.msg.timestamp = Date.now();
+      newmsg.save(function (err, result) {
+        if (err) {
+         console.log(err);
+        }
+        
+        io.emit('chat message', data);
+      })
+      
     });
   });
 
   /* .GET home page. */
   router.get('/home',isLoggedIn, function(req, res, next) {
-    //res.render('chat/index', { name:req.user });
     request.get("https://floating-stream-61460.herokuapp.com/api/signup", (err, response, body) => {
         if (err) {
             return next(err);
