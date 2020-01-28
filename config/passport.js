@@ -87,7 +87,7 @@ passport.use('google.signin', new GoogleStrategy({
 }, (accessToken, refreshToken, profile, done) => {
 
   Models.signup.findOne({
-
+    
     'google.googleid': profile.id
 
   }, function (err, user) {

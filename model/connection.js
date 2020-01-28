@@ -23,4 +23,5 @@ module.exports = {
    profile : profile,
    chat : chat,
    connectedChat : connectedChat
+
 }
