@@ -28,6 +28,7 @@
       </ul>
     </nav>
 
+    <!-- List of all the registered user -->
     <div>
       <ul>
         <% data.forEach(function(user){%>
@@ -37,10 +38,11 @@
         <%})%>
       </ul>
     </div>
+
     <div>
       <form>
         <input id="email" type="email" name="email">
-        <input id="signup-btn" type="submit">
+        <input id="email-btn" type="submit">
       </form>
     </div>
     <div class="col-lg-8">
@@ -59,8 +61,7 @@
   </div>
 </body>
 <script>
-  $('#signup-btn').click(function (e) {
-
+  $('#email-btn').click(function (e) {
     $.ajax({
       url: '/socket/email',
       type: 'POST',
@@ -77,5 +78,4 @@
     e.preventDefault();
   });
 </script>
-
 </html>
