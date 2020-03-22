@@ -47,7 +47,7 @@ exports.sender = function (name, msg, isEmail, io, data) {
                         toName: isEmail,
                         chats: newchats.chats[0]
                     })
-                    // //newmsg.connectedChat.msg.timestamp = Date.now();
+                    //newmsg.connectedChat.msg.timestamp = Date.now();
                     newmsg.save(function (err, result) {
                         if (err) {
                             console.log(err);
@@ -64,7 +64,7 @@ exports.sender = function (name, msg, isEmail, io, data) {
                 toName: isEmail,
                 chats: newchats.chats[0]
             })
-             //newmsg.connectedChat.msg.timestamp = Date.now();
+            //newmsg.connectedChat.msg.timestamp = Date.now();
             newmsg.save(function (err, result) {
                 if (err) {
                     console.log(err);
