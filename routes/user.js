@@ -2,7 +2,7 @@ var express = require('express');
 var app = express.Router();
 var bodyParser = require('body-parser')
 var passport = require('passport');
-
+var jwt = require('jsonwebtoken');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -22,13 +22,13 @@ app.post('/signup',
     passport.authenticate('local.signup', { failureRedirect: '/user/signup', failureFlash: true }),
     function (req, res) {
         res.redirect('/');
-});
+    });
 
 app.post('/signin',
     passport.authenticate('local.signin', { failureRedirect: '/user/signin', failureFlash: true }),
     function (req, res) {
         res.redirect('/');
-});
+    });
 
 app.get('/logout', function (req, res) {
     req.logout();
@@ -50,7 +50,24 @@ app.get('/facebook', isnotLoggedIn,
 app.get('/facebookredirect',
     passport.authenticate('facebook.signin', { failureRedirect: '/login' }),
     function (req, res) {
-       res.redirect('/');
+        res.redirect('/');
+    });
+
+
+app.post('/token',
+
+    function (req, res) {
+        var user = {
+            email: req.body.email,
+            password: req.body.password
+        };
+
+        var token = jwt.sign(user, 'secret', { expiresIn: 600000 });
+        res.json({ token });
+    });
+
+app.get('/token1', passport.authenticate('jwt.signin', { session: 'false' }), function (req, res) {
+    res.send("success");
 });
 
 function isnotLoggedIn(req, res, next) {
