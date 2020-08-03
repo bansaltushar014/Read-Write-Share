@@ -43,7 +43,6 @@ router.post('/login', (req, res) => {
         } else {
             if (bcrypt.compareSync(req.body.password, result.password)) {
                 // res.send("logged in!");
-
                 console.log(result._id);
                 const token = jwt.sign({ _id: result._id }, process.env.TOKEN_SECRET);
                 res.header('auth-token', token).send(token);
