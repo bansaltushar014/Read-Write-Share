@@ -7,10 +7,12 @@ var keys = require('../passkeys');
 var { check, validationResult } = require('express-validator/check');
 
 
+// Used to store data in session
 passport.serializeUser(function (user, cb) {
   cb(null, user.id);
 });
 
+// Used to remove data in session 
 passport.deserializeUser(function (id, cb) {
   Models.signup.findById(id, function (err, user) {
     cb(err, user);

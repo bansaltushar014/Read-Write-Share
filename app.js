@@ -7,7 +7,6 @@ var passport = require('passport');
 var indexRouter = require('./routes/index');
 var userRouter = require('./routes/user');
 var profileRouter = require('./routes/profile');
-var api = require('./app_api/routes/api_routes');
 
 var session = require('express-session');
 var socket = require('./routes/socket');
@@ -54,7 +53,6 @@ app.use(function (req, res, next) {
 });
 
 
-app.use('/api', api);
 app.use('/profile', profileRouter);
 app.use('/socket', socket.router);
 app.use('/user', userRouter);

@@ -28,7 +28,6 @@ var validateFile = function(file, cb ){
   }else{
     cb("Invalid file type. Only JPEG, PNG and GIF file are allowed.")
   }
-
 }
 
 module.exports = upload;
