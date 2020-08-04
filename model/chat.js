@@ -1,8 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-
-
 var connectedChat = new Schema({
     toName: {type:String},
     chats : [{
@@ -12,9 +10,7 @@ var connectedChat = new Schema({
     }]
 });
 
-
 //mongoose.model('comment', connectedChat);
-
 var chat = new Schema({
     fromName : {type:String},
     connectedChat: [connectedChat]   
