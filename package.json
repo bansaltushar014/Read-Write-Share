@@ -12,7 +12,7 @@
     "start": "concurrently \"node ./bin/www\" \"cd JWT_microservice && npm start\""
   },
   "dependencies": {
-    "bcrypt": "^3.0.8",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.18.3",
     "concurrently": "^5.2.0",
     "connect-flash": "^0.1.1",
